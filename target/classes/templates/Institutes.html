@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="normal\base::layout(~{::section})">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{/css/ourservices.css}">
+    <script src="https://kit.fontawesome.com/9fd25b2cb4.js" crossorigin="anonymous"></script>
+<!--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />-->
+</head>
+<body>
+<section>
+    <link rel="stylesheet" th:href="@{/css/ourservices.css}">
+    <script th:src="@{/js/search.js}"></script>
+    <script th:src="@{/js/dropdown.js}"></script>
+    <main>
+        <h1>Institutes of City</h1>
+        <div class="search-container">
+            <input onkeyup="search()" id="search-input" class="css" type="text" placeholder="Search Institutes By Name..........">
+            <div class="search-result">
+                <h2>hiii</h2>
+                <h2>hello</h2>
+                <h2>bye</h2>
+            </div>
+        </div>
+        <div class="left-panel">
+            <h3>Filter By</h3>
+            <div class="filter-group" th:object="${states}">
+<!--                <label for="filter-state">State:</label>-->
+                <select id="filter-state" name="stateFilter">
+                    <option value='-1'>SELECT</option>
+                    <option th:each="s : ${states}"
+                            th:value="${s.stateCode}"
+                            th:text="${s.stateName}"
+                            name="state"></option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <select id="filter-city" name="cityFilter" th:object="${cities}" disabled>
+                    <option value='-1'>SELECT</option>
+                    <option th:each="c : ${cities}"
+                            th:value="${c.cityId}"
+                            th:text="${c.cityName}"
+                            name="city"></option>
+                </select>
+            </div>
+            <div class="filter-group">
+<!--                <label for="filter-courses">Fields:</label>-->
+                <select id="filter-courses" disabled>
+                    <option value="-1">All</option>
+                    <option th:each="cs : ${courses}"
+                            th:value="${cs.courseId}"
+                            th:text="${cs.courseName}"
+                            name="courseFilter"
+                    >Actuarial Sciences</option>
+
+                </select>
+            </div>
+            <div class="filter-block">
+                <h3>Fees</h3>
+                <div class="fee-range" >
+                    <label for="filter-fee">Maximum:</label>
+                    <input type="number" id="filter-fee" name="max-fee">
+                </div>
+                <h3>Sort by:</h3>
+                <div class="sort-group">
+                    <input type="radio" id="sort-name" name="sort" value="name">
+                    <label for="sort-name">Name</label>
+                </div>
+                <div class="sort-group">
+                    <input type="radio" id="sort-rating" name="sort" value="rating">
+                    <label for="sort-rating">Rating</label>
+                </div>
+                <div class="sort-group">
+                    <input type="radio" id="sort-fees" name="sort" value="fees">
+                    <label for="sort-fees">Fees</label>
+                </div>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30767694.118830837!2d60.92944751922805!3d19.720199483373122!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30635ff06b92b791%3A0xd78c4fa1854213a6!2sIndia!5e0!3m2!1sen!2sin!4v1714571196978!5m2!1sen!2sin" width="200" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+
+
+
+<!--        <div class="right-panel">-->
+<!--            <div id="institutes">-->
+<!--                <div class="institutes-details" th:each="u : ${institutes}">-->
+<!--                    <img th:src="@{/img/institutes.jpg}" alt="University">-->
+<!--                    <div class="institutes-info">-->
+<!--                        <h1 th:text="${u.name}"></h1>-->
+<!--                        <p th:text="${u.address}"></p>-->
+<!--                        <p th:text="${u.city}"></p>-->
+<!--                        <p th:text="${u.state}"></p>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+            <div class="right-panel">
+                <div id="institutes">
+                    <div class="university-details" th:each="u : ${institutes}">
+                        <img th:src="@{'/img/institutes/'+${u.image}}" alt="University">
+
+                        <div class="university-info">
+                            <h2 th:text="${u.name}">Indore Institute of Science and Technology</h2>
+                            <p th:text="${u.address}">Address: Rau - Pithampur Rd, Opposite Indian Institute of Management, Rau, Indore, Madhya Pradesh
+                                453331</p>
+                            <p th:text="${u.city}"></p>
+                            <p th:text="${u.state}"></p>
+                            <p>Rating: ★★★★☆</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+            <hr/>
+        <br>
+
+<!--        <table id="table">-->
+<!--            <tr>-->
+<!--                <th>University name</th>-->
+<!--                <th>University state</th>-->
+<!--                <th>University City</th>-->
+<!--            </tr>-->
+<!--            <tr th:each="u : ${institutes}">-->
+<!--                <td th:text="${u.name}"></td>-->
+<!--                <td th:text="${u.state}"></td>-->
+<!--                <td th:text="${u.city}"></td>-->
+<!--            </tr>-->
+<!--        </table>-->
+
+
+
+<!--        <div th:each="cf : ${courseFee}">-->
+<!--            <h2 th:text="${cf.course.courseId}"></h2>-->
+<!--        </div>-->
+
+<!--            <div>-->
+<!--                <h2 th:text="${stateCodeFilter}"></h2>-->
+<!--            </div>-->
+
+
+<!--    </script>-->
+        <script th:inline="javascript">
+<!--                STATE FILTER-->
+        $("#filter-state").on('change', function(){
+              var institutes = [[${institutes}]];
+              $("#filter-city").removeAttr("disabled");
+              const filteredList = institutes.filter((u1) => u1.stateCode == $("#filter-state").val());
+              console.log($("#filter-state").val());
+              console.log(filteredList);
+
+              var row = '';
+
+              filteredList.forEach((ins,i) =>
+              {
+                row +=  `<div class="university-details">
+                 <img src="../img/institutes/` + ins.image + `" alt="image">
+                <div class="university-info">
+                <h2>`+ ins.name +`</h2>
+                         <p> Affilated By: `+ ins.university.name + `</p>
+                         <p>` + ins.address +`,  ` + ins.city +`,  `+ ins.state + `</p>
+                         </div>
+              </div>
+              <hr/>`;
+              })
+              $("#institutes").html(row);
+        });
+
+<!--        CITY FILTER-->
+        $("#filter-city").on('change', function(){
+              var institutes = [[${institutes}]];
+              $("#filter-courses").removeAttr("disabled");
+              const filteredList = institutes.filter((u1) => u1.cityID == $("#filter-city").val());
+              console.log($("#filter-city").val());
+              console.log(filteredList);
+              var row = `<div class="institutes-details">
+                <div class="institutes-info">`;
+
+              filteredList.forEach((ins,i) =>
+              {
+                row +=  `<div class="university-details">
+                 <img src="../img/institutes/` + ins.image + `" alt="image">
+                <div class="university-info">
+                <h2>`+ ins.name +`</h2>
+                         <p> Affilated By: `+ ins.university.name + `</p>
+                         <p>` + ins.address +`,  ` + ins.city +`,  `+ ins.state + `</p>
+                         </div>
+              </div>
+              <hr/>`;
+              })
+
+              $("#institutes").html(row);
+        });
+
+<!--        COURSE FILTER-->
+        $("#filter-courses").on('change', function(){
+              var courseFee = [[${courseFee}]];
+              console.log(courseFee);
+              const filteredList = courseFee.filter((c1) => c1.course.courseId == $("#filter-courses").val());
+              console.log($("#filter-courses").val());
+              console.log(filteredList);
+
+              var row = `<div class="institutes-details">
+                <div class="institutes-info">`;
+
+              filteredList.forEach((cf,i) =>
+              {
+                row +=  `<div class="university-details">
+                        <img src="../img/institutes/` + cf.university.image + `" alt="image">
+                        <div class="university-info">
+                         <h2>`+ cf.university.name +`</h2>
+                         <p> Affilated By: `+ cf.university.name + `</p>
+                         <p>` + cf.university.address +`,  ` + cf.university.city +`,  `+ cf.university.state + `</p>
+                         <p>Courses: `+ cf.course.courseName + `</p>
+                         <p>Fees: `+ cf.fee + `</p>
+                         </div>
+                       </div>
+                    <hr/>`;
+              })
+
+              $("#institutes").html(row);
+        });
+
+<!--        MIN MAX FILTER    -->
+        $("#filter-fee").change(function(){
+              var courseFee = [[${courseFee}]];
+              const filteredList = courseFee.filter((c1) => c1.fee <= $("#filter-fee").val());
+              var row = `<div class="institutes-details">
+                <div class="institutes-info">`;
+
+              filteredList.forEach((cf,i) =>
+              {
+                row +=  `<div class="university-details">
+                        <img src="../img/institutes/` + cf.university.image + `" alt="image">
+                        <div class="university-info">
+                         <h2>`+ cf.university.name +`</h2>
+                         <p> Affilated By: `+ cf.university.name + `</p>
+                         <p>` + cf.university.address +`,  ` + cf.university.city +`,  `+ cf.university.state + `</p>
+                         <p>Courses: `+ cf.course.courseName + `</p>
+                         <p>Fees: `+ cf.fee + `</p>
+                         </div>
+                       </div>
+                    <hr/>`;
+              })
+              $("#institutes").html(row);
+        });
+
+        </script>
+        </div>
+    </main>
+</section>
+</body>
+</html>

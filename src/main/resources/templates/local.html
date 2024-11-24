@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="normal\base::layout(~{::section})">
+<head>
+    <link rel="stylesheet" href="../css/ourservices.css">
+    <link rel="icon" type="image/x-icon" href="../images/explore-your-city-favicon-white.png">
+    <script src="https://kit.fontawesome.com/9fd25b2cb4.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+    <section>
+        <link rel="stylesheet" th:href="@{/css/ourservices.css}">
+        <main>
+            <h1>Local Attractions of City</h1>
+            <div class="left-panel">
+                <input type="text" id="search" placeholder="Search Local Attraction by Name">
+                <h3>Filter By</h3>
+                <div class="filter-group">
+                    <label for="filter-state">State:</label>
+                    <select id="filter-state">
+                        <option value="" disabled selected hidden>Select a State</option>
+                        <option value="Andhra Pradesh">Andhra Pradesh</option>
+                        <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                        <option value="Assam">Assam</option>
+                        <option value="Bihar">Bihar</option>
+                        <option value="Chhatisgarh">Chhattisgarh</option>
+                        <option value="Goa">Goa</option>
+                        <option value="Gujarat">Gujarat</option>
+                        <option value="Haryana">Haryana</option>
+                        <option value="Himachal Pradesh">Himachal Pradesh</option>
+                        <option value="Jharkhand">Jharkhand</option>
+                        <option value="Karnataka">Karnataka</option>
+                        <option value="Kerala">Kerala</option>
+                        <option value="Madhya Pradesh">Madhya Pradesh</option>
+                        <option value="Maharashtra">Maharashtra</option>
+                        <option value="Manipur">Manipur</option>
+                        <option value="Meghalaya">Meghalaya</option>
+                        <option value="Mizoram">Mizoram</option>
+                        <option value="Nagaland">Nagaland</option>
+                        <option value="Odisha">Odisha</option>
+                        <option value="Punjab">Punjab</option>
+                        <option value="Rajasthan">Rajasthan</option>
+                        <option value="Sikkim">Sikkim</option>
+                        <option value="Tamil Nadu">Tamil Nadu</option>
+                        <option value="Telangana">Telangana</option>
+                        <option value="Tripura">Tripura</option>
+                        <option value="Uttrakhand">Uttrakhand</option>
+                        <option value="Uttar Pradesh">Uttar Pradesh</option>
+                        <option value="West Bengal">West Bengal</option>
+                        <option value="Andaman & Nicobar Island">Andaman & Nicobar Island</option>
+                        <option value="Chandigarh">Chandigarh</option>
+                        <option value="Dadra & Nagar Haveli and Daman & Diu">Dadra & Nagar Haveli and Daman & Diu</option>
+                        <option value="Delhi">Delhi</option>
+                        <option value="Ladakh">Ladakh</option>
+                        <option value="Lakshdweep">Lakshdweep</option>
+                        <option value="Jammu Kasmir">Jammu Kashmir</option>
+                        <option value="Puducherry">Puducherry</option>
+
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="filter-rating">Rating:</label>
+                    <select id="filter-rating">
+                        <option value="">All</option>
+                        <option value="1">1 star</option>
+                        <option value="2">2 stars</option>
+                        <option value="3">3 stars</option>
+                        <option value="4">4 stars</option>
+                        <option value="5">5 stars</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="filter-courses">Category:</label>
+                    <select id="filter-courses">
+                        <option value="All">All</option>
+                        <option value="">Art galleries</option>
+                        <option value="">Entertainment venues</option>
+                        <option value="">Food and dining experiences</option>
+                        <option value="">General Stores</option>
+                        <option value="">Historical landmarks</option>
+                        <option value="">Medical Stores</option>
+                        <option value="">Natural parks</option>
+                        <option value="">Outdoor activities </option>
+                        <option value="">Stationary</option>
+                        <option value="">Shopping areas</option>
+                    </select>
+                </div>
+                <h3>Sort by:</h3>
+                <div class="sort-group">
+                    <input type="radio" id="sort-name" name="sort" value="name">
+                    <label for="sort-name">Name</label>
+                </div>
+                <div class="sort-group">
+                    <input type="radio" id="sort-rating" name="sort" value="rating">
+                    <label for="sort-rating">Rating</label>
+                </div>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30767694.118830837!2d60.92944751922805!3d19.720199483373122!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30635ff06b92b791%3A0xd78c4fa1854213a6!2sIndia!5e0!3m2!1sen!2sin!4v1714571196978!5m2!1sen!2sin" width="200" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            </div>
+
+
+
+            <div class="right-panel">
+                <div class="institutes-details">
+                    <img src="../images/hotel.jpg" alt="University">
+                    <div class="institutes-info">
+                        <h2>Sayaji Hotel</h2>
+                        <p>Address:H/1 , Scheme No.54, Vijay Nagar, Indore, Madhya Pradesh - 452010</p>
+                        <p>Contact No: 0731 4006666</p>
+                        <p>Visiting Hours: 24 Hrs </p>
+                        <p>Rating: ★★★★★</p>
+                        <a href="https://sayajihotels.com/our-locations/indore/" target="_blank">Official Website</a>
+                    </div>
+                </div>
+            </div>
+            </div>
+
+        </main>
+    </section>
+
+</body>
+</html>

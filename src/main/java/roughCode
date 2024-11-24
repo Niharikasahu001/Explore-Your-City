@@ -1,0 +1,195 @@
+---------------------------------------Server side validation using exception---------------------------------------------------------
+39:04-red box
+           try
+//        {
+//            //
+//            if(id>0)
+//            {
+//                model.addAttribute("user",new User());
+//                session.setAttribute("message", new Message("Successfully Registered !!","alert-success"));
+////              return "User created successfully!!";
+//            }
+//            else
+//            {
+//                System.out.println("You have not agreed the terms and conditions");
+//                throw new Exception("The user already exists");
+////                return "User not created!!";
+//            }
+
+//        }
+//        catch (Exception e)
+//        {
+//            e.printStackTrace();
+//            model.addAttribute("user",user);
+//            session.setAttribute("message", new Message("Something went wrong !!" +e.getMessage(),"alert-danger"));
+//        }
+
+--------------------------------------------------------------------------------------------------------------------
+//    @PostMapping("/createuser")
+//    public String createUser(@RequestBody UserDto userDto)
+//    {
+//        Long id = this.userService.saveUser(userDto);
+//
+//        if(id>0)
+//        {
+//            return "User created successfully!!";
+//        }
+//        else
+//        {
+//            return "User not created!!";
+//        }
+//    }
+
+---------------------------------------------------------------------------------------------------------------------------
+
+//    @DeleteMapping("/deleteuser")
+//    public String deleteUser(@RequestBody UserDto userDto)
+//    {
+//        Long id = this.userService.saveUser(userDto);
+//
+//        if(id>0)
+//        {
+//            return "User deleted successfully!!";
+//        }
+//        else
+//        {
+//            return "User not deleted!!";
+//        }
+//    }
+}
+----------------------------------------------------------------------------------------------------------------------------
+<form th:action="@{/search}" id="#myForm">
+                <div>
+                    <input onkeyup="search()" id="search-input" class="search search-container" type="text" placeholder="Search your destination..........">
+                    <div class="search-result">
+                        <h2>hiii</h2>
+                        <h2>hiii</h2>
+                        <h2>hiii</h2>
+                        <h2>hiii</h2>
+                        <h2>hiii</h2>
+                        <h2>hiii</h2>
+
+                    </div>
+                </div>
+            </form>
+
+
+-----------------------------------------------------------------------------------------------------------------------------
+  <script>
+        document.getElementById("submitButton").addEventListener("click", function() {
+            document.getElementById("myForm").submit();
+        });
+    </script>
+
+-------------------------------------------------------------------------------------------------------------------------------
+University Controller
+
+<!--            <div class="institutes-details" th:each="u : ${institutes}">-->
+<!--                <img th:src="@{/img/institutes.jpg}" alt="University">-->
+<!--                <div class="institutes-info">-->
+<!--                    <h2 th:text="${u.name}">Indore Institute of Science and Technology</h2>-->
+<!--                    <p th:text="${u.address}">Address: Rau - Pithampur Rd, Opposite Indian Institute of Management, Rau, Indore, Madhya Pradesh 453331</p>-->
+<!--                    <p th:text="${u.city}">Contact No: 1800 103 3069</p>-->
+<!--                    <p th:text="${u.timing}">Visiting Hours: 9:00 AM - 5:00 PM</p>-->
+<!--                    <p th:text="${u.ratings}">Rating: ★★★★☆</p>-->
+<!--                    <a href="https://indoreinstitute.com/" target="_blank">Official Website</a>-->
+<!--                </div>-->
+
+<!--                <div th:fragment="institutes-table(institutes)">-->
+<!--                    <table class="table">-->
+<!--                                <tr th:each="u, rowStat:${institutes.?[state== 'MP']}"  >-->
+<!--&lt;!&ndash;                        <tr th:each="u, rowStat:${uni}" th:if="${institutes.state==stateFilter}" th:object="${institutes}">&ndash;&gt;-->
+<!--                            <td th:text="${rowStat.count}"></td>-->
+<!--                            <td th:text="*{name}"></td>-->
+<!--                            <td th:text="${u.name}"></td>-->
+<!--                        </tr>-->
+<!--                    </table>-->
+<!--                </div>-->
+<!--                <br>-->
+<!--                <hr>-->
+<!--            </div>-->
+
+           <!-- <table>
+               <tr> -->
+<!--                    <th>Id</th>-->
+<!--                    <th>Name</th>-->
+<!--                </tr>-->
+<!--                <tr th:each="c : ${states}">-->
+<!--                    <th th:text="${c.stateId}"></th>-->
+<!--                    <th th:text="${c.stateName}"></th>-->
+<!--                </tr>-->
+<!--            </table>
+        </div>
+        </div>
+    </main>
+    <link rel="stylesheet" th:href="@{/css/ourservices.css}">
+
+    <script th:inline="javascript">-->
+<!--        $(document).ready(function() {-->
+<!--        $("#filter-state").on('change', function () {-->
+<!--            alert($(this).val());-->
+<!--        });-->
+
+
+<!--        $("#example2").on('change', function () {-->
+<!--            //alert($(this).val());-->
+<!--            alert($(this).find('option:selected').attr('id'));-->
+<!--        });-->
+<!--        });-->
+<!--    </script>-->
+
+
+-----------------------------------------------------------------------------------------------------------------------------------
+<!--    <script>-->
+<!--        /*<![CDATA[*/-->
+<!--            var universities =/*[[${institutes}]]*/;       /*]]>*/-->
+
+<!--        $('#srch').on('keyup',function(){-->
+<!--            var value = $(this).val();-->
+<!--            // console.log('Value = ' +value);-->
+<!--            var data = FilterFunction(value, universities);-->
+
+<!--            // Clear the table and rebuild using new filtered data-->
+<!--            rebuildTable(data);-->
+<!--        });-->
+
+<!--        function FilterFunction(value, data)-->
+<!--        {-->
+<!--            var filteredData = [];-->
+<!--            for(var i=0; i<data.length; i++)-->
+<!--            {-->
+<!--                value = value.toLowerCase();-->
+<!--                var name = data[i].name.toLowerCase();-->
+
+<!--                if(name.includes(value))-->
+<!--                {-->
+<!--                    filteredData.push(data[i]);-->
+<!--                }-->
+<!--                return filteredData;-->
+<!--            }-->
+<!--        }-->
+
+<!--        function rebuildTable(data){-->
+<!--            var table = document.getElementById('table');-->
+<!--            table.innerHTML=''-->
+<!--            for(var i=0; i<data.length; i++){-->
+<!--                var row =`<tr>-->
+<!--                            <td>${data[i].name}</td>-->
+<!--                            <td>${data[i].address}</td>-->
+<!--                        </tr>`               -->
+<!--                table.innerHTML += row;-->
+<!--            }-->
+<!--        }-->
+
+------------------------------------------------------------------------------------------------------------------------------------
+<!--            SEARCH FILTER-->
+<!--            var institutes = [[${institutes}]];-->
+<!--            $("#srch").on('keyup',function(){-->
+<!--             const filteredList = institutes.filter((u1) => u1.name == $("#srch").val());-->
+<!--             var row = "<tr><th>Name</th><th>Address</th><th>State</th></tr>";-->((uni,i) =>-->
+<!--             {-->
+<!--               row +=  "<tr><td >"+uni.name+"</td><td >"+uni.city+"</td><td >"+uni.state+"</td><td >"+uni.city+"</td></tr>";-->
+
+<!--             })-->
+<!--             $("#table").html(row);-->
+<!--        });-->

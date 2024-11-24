@@ -1,0 +1,26 @@
+.weather-app {
+    width: 300px;
+    padding: 20px;
+    background-color: #f8f9fa;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.weather-app input {
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+.weather-app button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.weather-app #weather-info {
+    margin-top: 20px;
+}

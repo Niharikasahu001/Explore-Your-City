@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+<!--    <title>Title</title>-->
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" th:href="@{/css/contactus.css}">
+    <link rel="stylesheet" th:href="@{/css/afterlogin.css}" >
+    <link rel="stylesheet" th:href="@{/css/more.css}" >
+    <!-- Bootstrap CSS -->
+    <script src="https://kit.fontawesome.com/9fd25b2cb4.js" crossorigin="anonymous"></script>
+
+    <!--    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">-->
+
+    <link rel="icon" type="image/x-icon" th:href="@{/img/explore-your-city-favicon-white.png}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <title th:text="${title}">Base html</title>
+</head>
+<body>
+<nav class="navbar">
+    <img th:src="@{/img/explore-your-city-high-resolution-logo-transparent (2).png}">
+    <ul class="navbar-nav">
+        <li class="navbar-item"><a th:href="@{/home}">Home</a></li>
+        <li class="navbar-item"><a th:href="@{/about}">About</a></li>
+        <li class="navbar-item"><a th:href="@{/services}">Services</a></li>
+        <li class="navbar-item"><a th:href="@{/discover}">Discover</a></li>
+        <li class="navbar-item"><a th:href="@{/eyc/contactus}">Contact Us</a></li>
+        <!--        <h1 th:text="${session.user.name}" >Hello user</h1>-->
+        <div th:if="${session.user}!=null">
+            <!-- Block of code to show when user is logged in -->
+            <li class="profile-notification">
+                <a th:href="@{/eyc/profile}"><img th:src="@{'/user/'+${session.user.imageUrl}}" alt="Profile"></a>
+                <div class="notification">
+                    <a th:href="@{/notification}"><i class="fa fa-bell"></i></a>
+                </div>
+            </li>
+        </div>
+        <div th:unless="${session.user}!=null">
+            <!-- Block of code to show when user is not logged in -->
+            <button type="button" class="signup-btn"><a th:href="@{/signup}">SignUp</a></button>
+        </div>
+
+    </ul>
+</nav>
+
+        <header>
+            <h1>Contact Us</h1>
+        </header>
+
+        <div class="contact-info">
+            <div class="contact-section">
+                <h2><i class="fa fa-map-marker-alt"></i> Address:</h2>
+                <p>123 Main Street</p>
+                <p>City, State</p>
+                <p>Zip</p>
+            </div>
+            <div class="contact-section">
+                <h2><i class="fa fa-phone"></i> Phone:</h2>
+                <p>(123) 456-7890</p>
+            </div>
+            <!-- <div class="contact-section">
+                <h2><i class="fa fa-clock"></i> Hours:</h2>
+                <p>Monday - Friday: 9am - 5pm</p>
+                <p>Saturday: 10am - 2pm</p>
+                <p>Sunday: Closed</p>
+            </div> -->
+            <div class="contact-section">
+                <h2><i class="fa fa-envelope"></i> Support:</h2>
+                <p>Email us at <br><a href="mailto:explore.city@gmail.com">explore.city@gmail.com</a></p>
+            </div>
+        </div>
+
+        <main>
+            <form>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="first-name">First Name:</label>
+                        <input type="text" id="first-name" name="first-name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="last-name">Last Name:</label>
+                        <input type="text" id="last-name" name="last-name" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="email">Email-address:</label>
+                        <input type="text" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone:</label>
+                        <input type="text" id="phone" name="phone" required>
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <label for="subject">Subject:</label>
+                    <select id="subject" name="subject">
+                        <option value="general-inquiry">General Inquiry</option>
+                        <option value="partnership-opportunity">Partnership Opportunity</option>
+                        <option value="feedback">Feedback</option>
+                    </select>
+                </div>
+
+
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+                </div>
+
+                <button type="submit">Submit</button>
+            </form>
+
+        </main>
+
+
+</body>
+</html>

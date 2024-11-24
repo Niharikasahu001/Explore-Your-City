@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="normal\base::layout(~{::section})">
+<head>
+    <meta charset="UTF-8">
+    <title>About page</title>
+</head>
+<body>
+
+    <section>
+        <header>
+            <h1>About Us</h1>
+        </header>
+
+
+        <div class="parent-container">
+            <div class="container">
+                <div class="left-side">
+                    <h2>Explore Your City</h2>
+                    <p>Welcome to Explore Your City! We are thrilled to offer a comprehensive and user-friendly
+                        web application that empowers students to discover and experience the best their city
+                        has to offer.</p>
+                </div>
+                <div class="right-side">
+                    <img th:src="@{/img/image1.jpg}" alt="Discussion illustration">
+                </div>
+            </div>
+            <div class="container">
+                <div class="left-side-1">
+                    <img th:src="@{/img/image2.jpg}" alt="Discussion illustration">
+                </div>
+                <div class="right-side-1">
+                    <h2>Our Mission</h2>
+                    <p>Our mission is to help students make the most of their time in the city by providing them
+                        with easy access to information on local attractions, restaurants, hostels, institutes, libraries,
+                        and events. We believe that students should have the opportunity to explore their surroundings
+                        and create unforgettable memories during their time in the city.</p>
+                </div>
+            </div>
+
+
+            <div class="container">
+                <div class="left-side">
+                    <h2>What We Offer</h2>
+                    <p>Our app offers a comprehensive guide to the city's best spots, whether it's
+                        cultural landmarks, dining experiences, or entertainment venues. Students can use the app to:</p>
+                </div>
+                <div class="right-side">
+                    <img th:src="@{/img/image3.jpg}" alt="Discussion illustration">
+                </div>
+            </div>
+            <link rel="stylesheet" th:href="@{/css/about.css}">
+        </div>
+    </section>
+
+</body>
+</html>

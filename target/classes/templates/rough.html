@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Auto Submit Form</title>
+</head>
+<body>
+<form id="myForm" th:action="@{index}" method="post">
+    <input type="text" name="username" placeholder="Enter username">
+    <input type="password" name="password" placeholder="Enter password">
+    <!-- Add other form fields as needed -->
+</form>
+
+<!-- Add JavaScript to auto-submit the form -->
+<script th:inline="javascript">
+    // Auto-submit the form when the document is ready
+    document.addEventListener("DOMContentLoaded", function() {
+        document.getElementById("myForm").submit();
+    });
+</script>
+</body>
+</html>

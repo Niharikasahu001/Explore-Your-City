@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="root::filter(~{::section})">
+<input name="stateCodeFilter" value="'MP'">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <section>
+        <h1>Hello !!</h1>
+        <h1>Hello !!</h1>
+        <h1>Hello !!</h1>
+        <h1>Hello !!</h1>
+        <h1>Hello !!</h1>
+        <h1>Hello !!</h1>
+        <h1>Hello !!</h1>
+        <h1>Hello !!</h1>
+        <h1>Hello !!</h1>
+        <h1>Hello !!</h1>
+        <h1>Hello !!</h1>
+        <h1>Hello !!</h1>
+
+<!--        <div class="institutes-details" th:each="u : ${institutes}">-->
+<!--            <div class="institutes-info">-->
+<!--                <h2 th:text="${u.name}">Indore Institute of Science and Technology</h2>-->
+<!--                <p th:text="${u.address}">Address: Rau - Pithampur Rd, Opposite Indian Institute of Management, Rau, Indore, Madhya Pradesh 453331</p>-->
+<!--                <p th:text="${u.city}">Contact No: 1800 103 3069</p>-->
+<!--                <p th:text="${u.timing}">Visiting Hours: 9:00 AM - 5:00 PM</p>-->
+<!--                <p th:text="${u.ratings}">Rating: ★★★★☆</p>-->
+<!--                <a href="https://indoreinstitute.com/" target="_blank">Official Website</a>-->
+<!--            </div>-->
+<!--            <br>-->
+<!--            <hr>-->
+<!--        </div>-->
+        <div th:each="stateCodeFilter:'MP'">
+            <div th:replace="root::institutes-table(${institutes},${stateCodeFilter})"></div>
+        </div>
+
+
+
+
+<!--        <table class="table">-->
+<!--            <tr th:each="u, rowStat:${institutes.?[state== 'MP']}"  >-->
+<!--                <td th:text="${rowStat.count}"></td>-->
+<!--                <td th:text="*{name}"></td>-->
+<!--                <td th:text="${u.name}"></td>-->
+<!--            </tr>-->
+<!--        </table>-->
+        <script th:inline="javascript">
+            var uni:[[${institutes}]]
+        </script>
+    </section>
+
+</body>
+</html>

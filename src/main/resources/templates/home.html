@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="normal\base::layout(~{::section})">
+<head>
+    <meta charset="UTF-8">
+    <title>new</title>
+</head>
+<body>
+
+<section>
+    <script th:src="@{/js/statesearch.js}"></script>
+    <script th:src="@{/js/search.js}"></script>
+    <main>
+        <div class="bg">
+            <h2 id="heading1">Let's Search</h2>
+            <h2 id="heading2">Your Destination</h2>
+            <div class="search-container">
+                <input onkeyup="search()" id="search-input" class="search" type="text" placeholder="Search Destinations By Name..........">
+                <div class="search-result">
+
+                </div>
+            </div>
+        </div>
+    </main>
+    <section class="our-services">
+        <h1>Our Services</h1>
+        <div class="service" onclick="document.location='/eyc/services'">
+            <i class="fa-solid fa-building-columns fa-beat fa-2xl" style="color: #59a1d4;"></i>
+            <h2>Universities</h2>
+            <p>View all universities of your City</p>
+        </div>
+        <div class="service" onclick="document.location='/eyc/services'">
+            <i class="fa-solid fa-hotel fa-beat fa-2xl" style="color: #59a1d4;"></i>
+            <h2>Hotels</h2>
+            <p>View all hotels of your City</p>
+        </div>
+        <div class="service" onclick="document.location='/eyc/services'">
+            <i class="fa-solid fa-bed fa-beat fa-2xl" style="color: #59a1d4;"></i>
+            <h2>Hostels</h2>
+            <p>View all hostels of your City</p>
+        </div>
+        <div class="service" onclick="document.location='/eyc/services'">
+            <i class="fa-solid fa-book fa-beat fa-2xl" style="color: #59a1d4;"></i>
+            <h2>Libraries</h2>
+            <p>View all libraries of your City</p>
+        </div>
+        <div class="service" onclick="document.location='/eyc/services'">
+            <i class="fa-solid fa-store fa-beat fa-2xl" style="color: #59a1d4;"></i>
+            <h2>Local Attractions</h2>
+            <p>View all local attractions of your City</p>
+        </div>
+        <div class="service" onclick="document.location='/eyc/services'">
+            <i class="fa-solid fa-ellipsis fa-beat fa-2xl" style="color: #59a1d4;"></i>
+            <h2>More</h2>
+            <p>View all our services</p>
+        </div>
+    </section>
+
+    <section class="our-services" style="margin-top: 0px;">
+        <h1>Discover</h1>
+        <div class="states" onclick="document.location='/eyc/discover'">
+            <img th:src="@{/img/Andhra Pradesh.jpg}" alt="Service 1">
+            <h2>Andhra Pradesh</h2>
+<!--            <p>All about Andhra Pradesh</p>-->
+        </div>
+        <div class="states" onclick="document.location='/eyc/discover'">
+            <img th:src="@{/img/Arunachal Pradesh.jpg}" alt="Service 1">
+            <h2>Arunachal Pradesh</h2>
+<!--            <p>All about Arunachal Pradesh</p>-->
+        </div>
+        <div class="states" onclick="document.location='/eyc/discover'">
+            <img th:src="@{/img/Assam.jpg}" alt="Service 1">
+            <h2>Assam</h2>
+<!--            <p>All about Assam</p>-->
+        </div>
+        <div class="states" onclick="document.location='/eyc/discover'">
+            <img th:src="@{/img/Bihar.jpg}" alt="Service 1">
+            <h2>Bihar</h2>
+<!--            <p>All about Bihar</p>-->
+        </div>
+        <div class="states" onclick="document.location='/eyc/discover'">
+            <img th:src="@{/img/Bihar.jpg}" alt="Service 1">
+            <h2>Chhatisgarh</h2>
+<!--            <p>All about Chhatisgarh</p>-->
+        </div>
+        <div class="states" onclick="document.location='/eyc/discover'">
+            <img th:src="@{/img/india.jpg}" alt="Service 1">
+            <h2>More</h2>
+<!--            <p>All about other Cities</p>-->
+        </div>
+    </section>
+
+<!--<section>-->
+<!--    <h1>Welcome!!</h1>-->
+<!--    <h1>Username: <span th:text="${user.name}"></span></h1>-->
+<!--    <h1>Username: <span th:text="${user.email}"></span></h1>-->
+<!--    <h1>Username: <span th:text="${user.password}"></span></h1>-->
+<!--</section>-->
+
+</body>
+</html>

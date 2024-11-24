@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="normal\base::layout(~{::section})">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/9fd25b2cb4.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Explore Your City</title>
+</head>
+<body>
+    <section>
+        <link rel="stylesheet" th:href="@{/css/state.css}">
+        <main>
+            <div class="bg">
+                <div class="path">
+                    <div class="page">
+                        <h3 style="font-size: 32px;">Select Your City Guide</h3>
+                    </div>
+                    <div class="show">
+                        <select class="select" id="selectedState">
+                            <option value='-1'>SELECT</option>
+                            <option th:each="c : ${cities}"
+                                    th:value="${c.cityId}"
+                                    th:text="${c.cityName}"
+                                    name="city"></option>
+                        </select>
+                        <button class="btn btn-default goButton "> Go</button>
+
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!--        Hostels-->
+        <section class="our-services">
+            <h1>Hostels</h1>
+            <div class="sub-card" th:each="u : ${HostelsByState}">
+                <img th:src="@{'/img/hostels/'+${u.image}}" alt="Image 1">
+                <h2 th:text="${u.name}"></h2>
+            </div>
+            <button class="more-button" onclick="document.location='/eyc/services/hostels'">More</button>
+        </section>
+        <section class="our-services">
+            <h1>Hospital</h1>
+            <div class="sub-card" th:each="u : ${HospitalsByState}">
+                <img th:src="@{'/img/hospital/'+${u.image}}" alt="Image 1">
+                <h2 th:text="${u.name}"></h2>
+            </div>
+            <button class="more-button" onclick="document.location='/eyc/services/hospital'">More</button>
+        </section>
+        <section class="our-services">
+            <h1>Restaurants</h1>
+            <div class="sub-card" th:each="u : ${RestaurantsByState}">
+                <img th:src="@{'/img/restaurants/'+${u.image}}" alt="Image 1">
+                <h2 th:text="${u.name}"></h2>
+            </div>
+            <button class="more-button" onclick="document.location='/eyc/services/restaurants'">More</button>
+        </section>
+        <section class="our-services">
+            <h1>Institutes</h1>
+            <!--            <h1 th:text="${searchResult.stateName}"></h1>-->
+            <div class="sub-card" th:each="u : ${InstitutesByState}">
+                <!--                <img th:src="@{'/user/'+${session.user.imageUrl}}" alt="Image 1">-->
+                <img th:src="@{'/img/institutes/'+${u.image}}" alt="Image 1">
+                <h2 th:text="${u.name}"></h2>
+            </div>
+            <button class="more-button" onclick="document.location='/institutes/college'">More</button>
+        </section>
+        <section class="our-services">
+            <h1>Hotels</h1>
+            <div class="sub-card">
+<!--                <img src="../img/university.jpg" alt="Image 1">-->
+                <h2>Image 1</h2>
+            </div>
+            <div class="sub-card">
+<!--                <img src="../img/university.jpg" alt="Image 1">-->
+                <h2>Image 1</h2>
+            </div>
+            <div class="sub-card">
+<!--                <img src="../img/university.jpg" alt="Image 1">-->
+                <h2>Image 1</h2>
+            </div>
+            <div class="sub-card">
+<!--                <img src="../img/university.jpg" alt="Image 1">-->
+                <h2>Image 1</h2>
+            </div>
+            <button class="more-button" onclick="document.location='./hotel.html'">More</button>
+        </section>
+
+
+        <section class="our-services">
+            <h1>Library</h1>
+            <div class="sub-card">
+<!--                <img src="../img/university.jpg" alt="Image 1">-->
+                <h2>Image 1</h2>
+            </div>
+            <div class="sub-card">
+<!--                <img src="../img/university.jpg" alt="Image 1">-->
+                <h2>Image 1</h2>
+            </div>
+            <div class="sub-card">
+<!--                <img src="../img/university.jpg" alt="Image 1">-->
+                <h2>Image 1</h2>
+            </div>
+            <div class="sub-card">
+<!--                <img src="../img/university.jpg" alt="Image 1">-->
+                <h2>Image 1</h2>
+            </div>
+            <button class="more-button" onclick="document.location='library.html'">More</button>
+        </section>
+        <section class="our-services">
+            <h1>Rental Houses</h1>
+            <div class="sub-card">
+<!--                <img src="../img/university.jpg" alt="Image 1">-->
+                <h2>Image 1</h2>
+            </div>
+            <div class="sub-card">
+<!--                <img src="../img/university.jpg" alt="Image 1">-->
+                <h2>Image 1</h2>
+            </div>
+            <div class="sub-card">
+<!--                <img src="../img/university.jpg" alt="Image 1">-->
+                <h2>Image 1</h2>
+            </div>
+            <div class="sub-card">
+<!--                <img src="../img/university.jpg" alt="Image 1">-->
+                <h2>Image 1</h2>
+            </div>
+            <button class="more-button" onclick="document.location='rental.html'">More</button>
+        </section>
+
+        <section class="our-services">
+            <h1>Banks</h1>
+            <div class="sub-card">
+<!--                <img src="../img/university.jpg" alt="Image 1">-->
+                <h2>Image 1</h2>
+            </div>
+            <div class="sub-card">
+<!--                <img src="../img/university.jpg" alt="Image 1">-->
+                <h2>Image 1</h2>
+            </div>
+            <div class="sub-card">
+<!--                <img src="../img/university.jpg" alt="Image 1">-->
+                <h2>Image 1</h2>
+            </div>
+            <div class="sub-card">
+<!--                <img src="../img/university.jpg" alt="Image 1">-->
+                <h2>Image 1</h2>
+            </div>
+            <button class="more-button" onclick="document.location='banks.html'">More</button>
+        </section>
+
+        <section class="our-services">
+            <h1>Museums</h1>
+            <div class="sub-card">
+<!--                <img src="../img/university.jpg" alt="Image 1">-->
+                <h2>Image 1</h2>
+            </div>
+            <div class="sub-card">
+<!--                <img src="../img/university.jpg" alt="Image 1">-->
+                <h2>Image 1</h2>
+            </div>
+            <div class="sub-card">
+<!--                <img src="../img/university.jpg" alt="Image 1">-->
+                <h2>Image 1</h2>
+            </div>
+            <div class="sub-card">
+<!--                <img src="../img/university.jpg" alt="Image 1">-->
+                <h2>Image 1</h2>
+            </div>
+            <button class="more-button" onclick="document.location='museums.html'">More</button>
+        </section>
+        <section class="our-services">
+            <h1>Buses</h1>
+            <div class="sub-card">
+                <h2>Image 1</h2>
+            </div>
+            <div class="sub-card">
+<!--                <img src="../img/university.jpg" alt="Image 1">-->
+                <h2>Image 1</h2>
+            </div>
+            <div class="sub-card">
+                <h2>Image 1</h2>
+            </div>
+            <div class="sub-card">
+<!--                <img src="../img/university.jpg" alt="Image 1">-->
+                <h2>Image 1</h2>
+            </div>
+            <button class="more-button" onclick="document.location='buses.html'">More</button>
+        </section>
+        <section class="our-services">
+            <h1>Local attractions</h1>
+            <div class="sub-card">
+<!--                <img src="../img/university.jpg" alt="Image 1">-->
+                <h2>Image 1</h2>
+            </div>
+            <div class="sub-card">
+<!--                <img src="../img/university.jpg" alt="Image 1">-->
+                <h2>Image 1</h2>
+            </div>
+            <div class="sub-card">
+<!--                <img src="../img/university.jpg" alt="Image 1">-->
+                <h2>Image 1</h2>
+            </div>
+            <div class="sub-card">
+<!--                <img src="../img/university.jpg" alt="Image 1">-->
+                <h2>Image 1</h2>
+            </div>
+            <button class="more-button" onclick="document.location='local.html'">More</button>
+        </section>
+        <section class="our-services">
+            <h1>Local Events</h1>
+            <div class="sub-card">
+<!--                <img src="../img/university.jpg" alt="Image 1">-->
+                <h2>Image 1</h2>
+            </div>
+            <div class="sub-card">
+<!--                <img src="../img/university.jpg" alt="Image 1">-->
+                <h2>Image 1</h2>
+            </div>
+            <div class="sub-card">
+<!--                <img src="../img/university.jpg" alt="Image 1">-->
+                <h2>Image 1</h2>
+            </div>
+            <div class="sub-card">
+<!--                <img src="../img/university.jpg" alt="Image 1">-->
+                <h2>Image 1</h2>
+            </div>
+
+            <table id="table">
+                <tr>
+                    <th>University name</th>
+                    <th>University state</th>
+                    <th>University City</th>
+                </tr>
+                <tr th:each="u : ${InstitutesByState}">
+                    <td th:text="${u.name}"></td>
+                    <td th:text="${u.state}"></td>
+                    <td th:text="${u.city}"></td>
+                </tr>
+            </table>
+
+            <button class="more-button" onclick="document.location='events.html'">More</button>
+            <script inline="javascript">
+                <!--        CITY FILTER-->
+<!--        $("#selectedState").on('change', function(){-->
+<!--              var universityByState = [[${universityByState}]];-->
+<!--              $("#selectedState").removeAttr("disabled");-->
+<!--              const filteredList = universityByState.filter((u1) => u1.cityID == $("#selectedState").val());-->
+<!--              console.log($("#selectedState").val());-->
+<!--              console.log(filteredList);-->
+<!--              var row = `<div class="institutes-details">-->
+<!--                <div class="institutes-info">`;-->
+
+<!--              filteredList.forEach((ins,i) =>-->
+<!--              {-->
+<!--                row +=  `<h2>`+ ins.name +`</h2>-->
+<!--                         <p> Affilated By: `+ ins.university.name + `</p>-->
+<!--                         <p>` + ins.address +`,  ` + ins.city +`,  `+ ins.state + `</p>`;-->
+<!--              })-->
+<!--              row += `-->
+<!--                </div>-->
+<!--              </div>`;-->
+<!--              $("#institutes").html(row);-->
+<!--        });-->
+
+            </script>
+        </section>
+    </section>
+</body>
+</html>

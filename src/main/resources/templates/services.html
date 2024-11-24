@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="normal\base::layout(~{::section})">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/9fd25b2cb4.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Explore Your City</title>
+</head>
+<body>
+    <section>
+        <main>
+            <section class="our-services">
+                <h1>Our Services</h1>
+                <div class="service" onclick="document.location='/institutes/college'">
+                    <i class="fa-solid fa-school fa-beat fa-2xl" style="color: #59a1d4;"></i>
+                    <h2>Universities</h2>
+                    <p>View all universities of your City</p>
+                </div>
+                <div class="service" onclick="document.location='/eyc/services/hotel'">
+                    <i class="fa-solid fa-hotel fa-beat fa-2xl" style="color: #59a1d4;"></i>
+                    <h2>Hotels</h2>
+                    <p>View all hotels of your City</p>
+                </div>
+                <div class="service" onclick="document.location='/eyc/services/hostels'">
+                    <i class="fa-solid fa-bed fa-beat fa-2xl" style="color: #59a1d4;"></i>
+                    <h2>Hostels</h2>
+                    <p>View all hostels of your City</p>
+                </div>
+                <div class="service" onclick="document.location='/eyc/services/library'">
+                    <i class="fa-solid fa-book fa-beat fa-2xl" style="color: #59a1d4;"></i>
+                    <h2>Libraries</h2>
+                    <p>View all libraries of your City</p>
+                </div>
+                <div class="service" onclick="document.location='/eyc/services/rental'">
+                    <i class="fa-solid fa-house-user fa-beat fa-2xl" style="color: #59a1d4;"></i>
+                    <h2>Rental Houses</h2>
+                    <p>View all rental houses of your City</p>
+                </div>
+
+                <div class="service" onclick="document.location='/eyc/services/hospital'">
+                    <i class="fa-solid fa-hospital fa-beat fa-2xl" style="color: #59a1d4;"></i>
+                    <h2>Hospital</h2>
+                    <p>View all hospitals of your City</p>
+                </div>
+
+                <div class="service" onclick="document.location='/eyc/services/banks'">
+                    <i class="fa-solid fa-money-check-dollar fa-beat fa-2xl" style="color: #59a1d4;"></i>
+                    <h2>Banks</h2>
+                    <p>View all banks of your City</p>
+                </div>
+                <div class="service" onclick="document.location='/eyc/services/restaurants'">
+                    <i class="fa-solid fa-utensils fa-beat fa-2xl" style="color: #59a1d4;"></i>
+                    <h2>Restaurants</h2>
+                    <p>View all restaurants of your City</p>
+                </div>
+
+                <div class="service" onclick="document.location='/eyc/services/museums'">
+                    <i class="fa-solid fa-building-columns fa-beat fa-2xl" style="color: #59a1d4;"></i>
+                    <h2>Museums</h2>
+                    <p>View all museums of your City</p>
+                </div>
+                <div class="service" onclick="document.location='/eyc/services/buses'">
+                    <i class="fa-solid fa-bus fa-beat fa-2xl" style="color: #59a1d4;"></i>
+                    <h2>Buses</h2>
+                    <p>View all buses with routes of your City</p>
+                </div>
+                <div class="service" onclick="document.location='/eyc/services/local'">
+                    <i class="fa-solid fa-store fa-beat fa-2xl" style="color: #59a1d4;"></i>
+                    <h2>Local Attractions</h2>
+                    <p>View all local attractions of your City</p>
+                </div>
+                <div class="service" onclick="document.location='/eyc/services/events'">
+                    <i class="fa-solid fa-calendar-days fa-beat fa-2xl" style="color: #59a1d4;"></i>
+                    <h2>Local Events </h2>
+                    <p>View all local events of your City</p>
+                </div>
+            </section>
+            <link rel="stylesheet" th:href="@{/css/services.css}">
+        </main>
+
+    </section>
+</body>
+</html>
